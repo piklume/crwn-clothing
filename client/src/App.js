@@ -15,7 +15,7 @@ import SignInAndSignUpPage from './pages/sign-in-and-sign-up/sign-in-and-sign-up
 import { selectCurrentUser } from './redux/user/user.selector';
 import { checkUserSession } from './redux/user/user.action';
 
-const App = ({ checkUserSession }) => {
+const App = ({ checkUserSession,currentUser }) => {
 
   useEffect(() => { checkUserSession()}, [checkUserSession])
 
@@ -27,7 +27,7 @@ const App = ({ checkUserSession }) => {
         <Route path='/shop' component={ShopPage} />
         <Route path='/contact' component={Contact} />
         <Route exact path='/checkout' component={CheckoutPage} />
-        <Route exact path='/signin'  render={() => this.props.currentUser ? (<Redirect to='.' />):(<SignInAndSignUpPage />)}  />
+        <Route exact path='/signin'  render={() => currentUser ? (<Redirect to='.' />):(<SignInAndSignUpPage />)}  />
       </Switch>
     </div>
   );
