@@ -21,10 +21,20 @@
     .price {
       width: 23%;
     }
-  
+    
+    .price {
+      @media screen and (max-width: 800px) {
+        padding-left: 10px;
+      }
+    }
+
     .quantity {
       padding-left: 20px;
       display: flex;
+
+      @media screen and (max-width: 800px) {
+        padding-left: 0;
+      }
 
       .arrow {
         cursor: pointer;
